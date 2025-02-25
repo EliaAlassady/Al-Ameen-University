@@ -90,11 +90,13 @@ const Navbar = () => {
                                 <ul className='space-y-2'>
                                     {navData.map((e, index) => (
                                         <li key={index}>
-                                            <Link to={e.path}> <div
+                                            <div
                                                 className='flex flex-row-reverse items-center justify-between p-2 text-white hover:bg-white hover:text-blue-500 rounded-lg cursor-pointer'
                                                 onClick={() => e.hasMenu && setDropdownOpen(dropdownOpen === e.title ? '' : e.title)}
                                             >
-                                                <span>{e.title}</span>
+                                                <Link to={e.path}>
+                                                    <span>{e.title}</span>
+                                                </Link>
                                                 {e.hasMenu && (
                                                     <ChevronDown
                                                         size={20}
@@ -102,7 +104,6 @@ const Navbar = () => {
                                                     />
                                                 )}
                                             </div>
-                                            </Link>
                                             {e.hasMenu && dropdownOpen === e.title && (
                                                 <div className='pl-4 mt-2 space-y-1'>
                                                     {e.menu.map((subMenu, index2) => (

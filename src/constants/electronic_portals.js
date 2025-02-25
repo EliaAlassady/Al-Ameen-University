@@ -9,5 +9,6 @@ export const electronicPortals = [
     new ElectronicPortals('', 'مجلات'),
     new ElectronicPortals('', 'دليل العراق'),
     new ElectronicPortals('', 'نظام الشكاوي'),
+    new ElectronicPortals('', 'قسم الشؤون الادارية والمالية'),
     new ElectronicPortals('', 'بولونيا'),
 ]
