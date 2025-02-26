@@ -49,7 +49,7 @@ const Navbar = () => {
                             {e.hasMenu && dropdownOpen === e.title && (
                                 <div className={`absolute grid grid-cols-2 gap-2 p-3 bg-white text-white rounded-lg shadow-lg top-full ${index > navData.length / 2 ? '' : 'right-30'}`}>
                                     {e.menu.map((subMenu, index2) => (
-                                        <Link to={subMenu.path}>
+                                        <Link to={subMenu.path} key={index2}>
                                             <div
                                                 key={index2}
                                                 className="group flex items-center justify-end gap-2 p-2 hover:bg-blue-500 rounded-md cursor-pointer transition-colors duration-300"
@@ -107,7 +107,7 @@ const Navbar = () => {
                                             {e.hasMenu && dropdownOpen === e.title && (
                                                 <div className='pl-4 mt-2 space-y-1'>
                                                     {e.menu.map((subMenu, index2) => (
-                                                        <Link to={subMenu.path}>
+                                                        <Link to={subMenu.path} key={index2}>
                                                             <div
                                                                 key={index2}
                                                                 className="flex items-center justify-end gap-2 p-2 text-white hover:bg-white hover:text-blue-500 rounded-md cursor-pointer"

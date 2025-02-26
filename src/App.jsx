@@ -6,6 +6,7 @@ import NewsScreen from './screens/news_screen'
 import ActivitiesScreen from './screens/activities_screen'
 import AboutScreen from './screens/about_screen'
 import ContactScreen from './screens/contact_screen'
+import AboutDevelopmentTeamScreen from './screens/about_dev_screen';
 
 function App() {
 
@@ -17,7 +18,8 @@ function App() {
         <Route path="/colleges" element={<CollegesScreen />} />
         <Route path="/news" element={<NewsScreen />} />
         <Route path="/activities" element={<ActivitiesScreen />} />
-        <Route path="/about" element={<AboutScreen />} />
+        <Route path="/about_university" element={<AboutScreen />} />
+        <Route path="/about_development_team" element={<AboutDevelopmentTeamScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
       </Routes>
     </Router>

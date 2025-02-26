@@ -38,6 +38,10 @@ export const navData = [
     new NavBarItem("الاخبار", true, [
         new MenuItem("اخبار الجامعة", MdHighQuality),
     ], '/news'),
+    new NavBarItem("النشاطات", true, [
+        new MenuItem("نشاطات الجامعة", MdLocalActivity),
+        new MenuItem("نشاطات الطلبة", MdLocalActivity),
+    ], '/activities'),
     new NavBarItem("تشكيلات الجامعة", true, [
         new MenuItem("قسم الشؤون الادارية والمالية", MdHighQuality),
         new MenuItem("قسم ضمان الجودة", MdHighQuality),
@@ -48,14 +52,9 @@ export const navData = [
         new MenuItem("طلب منحة دراسية", IoGitPullRequestSharp),
         new MenuItem("طلب وظيفة", IoBag),
     ]),
-    new NavBarItem("النشاطات", true, [
-        new MenuItem("نشاطات الجامعة", MdLocalActivity),
-        new MenuItem("نشاطات الطلبة", MdLocalActivity),
-    ], '/activities'),
-
     new NavBarItem("حول", true, [
-        new MenuItem("حول الجامعة", FaInfoCircle, false, [], '/about'),
-        new MenuItem("حول فريق العمل", FaInfoCircle, false, [], '/about'),
+        new MenuItem("حول الجامعة", FaInfoCircle, false, [], '/about_university'),
+        new MenuItem("حول فريق العمل", FaInfoCircle, false, [], '/about_development_team'),
     ]),
 
     new NavBarItem("الاتصال", false, [], '/contact'),

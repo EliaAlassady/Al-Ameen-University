@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.webp'
 
 export default function Intro() {
@@ -37,26 +38,29 @@ export default function Intro() {
                     </motion.p>
                     <div className='flex gap-5 items-center w-full justify-center'>
                         <div className="flex gap-4">
-                            <motion.button
-                                className="bg-white text-black px-6 py-3 rounded-xl cursor-pointer"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                حول الجامعة
-                            </motion.button>
-
-                            <motion.button
-                                className="border-white border-2 px-6 py-3 rounded-xl cursor-pointer"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                الاتصال بنا
-                            </motion.button>
+                            <Link to={'/about_university'}>
+                                <motion.button
+                                    className="bg-white text-black px-6 py-3 rounded-xl cursor-pointer"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    حول الجامعة
+                                </motion.button>
+                            </Link>
+                            <Link to={'/contact'}>
+                                <motion.button
+                                    className="border-white border-2 px-6 py-3 rounded-xl cursor-pointer"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    الاتصال بنا
+                                </motion.button>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="absolute bottom-0 left-0 w-full h-40 bg-[#e9e9e9] clip-sharp"></div>
-        </div>
+        </div >
     )
 }
