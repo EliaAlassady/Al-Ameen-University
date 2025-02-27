@@ -14,7 +14,7 @@ export default function InfoCardItem({ Icon, title, subTitle }) {
             <div className=" h-full flex flex-col items-center justify-center gap-3">
                 <span> <Icon className=" text-blue-500 size-10" /> </span>
                 <h1 className=" font-bold text-3xl text-[#202020]">{title}</h1>
-                <p className="  font-semibold text-xl text-gray-500">{subTitle}</p>
+                <p className="  font-semibold text-xl text-center text-gray-500">{subTitle}</p>
             </div>
         </div>
     )

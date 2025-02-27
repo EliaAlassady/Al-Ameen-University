@@ -43,7 +43,7 @@ export const navData = [
         new MenuItem("نشاطات الطلبة", MdLocalActivity),
     ], '/activities'),
     new NavBarItem("تشكيلات الجامعة", true, [
-        new MenuItem("قسم الشؤون الادارية والمالية", MdHighQuality),
+        new MenuItem("قسم الشؤون الادارية والمالية", MdHighQuality, false, [], '/aaf_affairs'),
         new MenuItem("قسم ضمان الجودة", MdHighQuality),
         new MenuItem("قسم الاعلام ولاتصال الحكومي", RiWomenLine),
         new MenuItem("قسم شؤون المرأة", RiWomenLine),

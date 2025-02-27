@@ -1,6 +1,8 @@
 export class ElectronicPortals {
-    constructor(image, title) {
+    constructor(image, title, path, url) {
         this.image = image
         this.title = title
+        this.path = path
+        this.url = url
     }
 }
