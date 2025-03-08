@@ -6,7 +6,7 @@ export default function ComplaintsSystemScreen() {
     return (
         <>
             <Header title={'نظام الشكاوي'} />
-            <ContactForm />
+            <ContactForm title={''} text={'تفاصيل الشكوى'} />
             <Footer />
         </>
     )

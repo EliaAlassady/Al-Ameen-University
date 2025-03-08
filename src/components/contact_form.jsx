@@ -1,9 +1,9 @@
-export default function ContactForm() {
+export default function ContactForm({ title, text }) {
     return (
         <div className="min-h-100 mt-10 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8">
                 <h2 className="text-3xl font-bold text-[#202020] mb-8 text-center">
-                    نموذج الاتصال
+                    {title}
                 </h2>
 
                 <form className="space-y-6">
@@ -68,7 +68,7 @@ export default function ContactForm() {
                                 id="phone"
                                 name="phone"
                                 required
-                                pattern="[0-9]{10}"
+                                pattern="[0-9]{11}"
                                 className="w-full px-4 py-2 border border-gray-300 rounded-md 
                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
                 hover:border-blue-400 transition-all"
@@ -79,7 +79,7 @@ export default function ContactForm() {
 
                     <div>
                         <label htmlFor="message" className="block text-sm font-medium text-right text-gray-700 mb-2">
-                            الرسالة
+                            {text}
                         </label>
                         <textarea
                             id="message"
