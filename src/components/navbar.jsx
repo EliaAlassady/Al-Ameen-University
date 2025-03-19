@@ -1,12 +1,62 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'react-feather';
-import { navData } from '../constants/navbar';
 import { Link } from 'react-router-dom';
+import collegeController from '../controllers/college';
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState('');
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const { colleges, isLoading } = collegeController();
+
+    const navData = [
+        { title: 'الرئيسية', hasMenu: false, path: '/' },
+        {
+            title: 'الكليات',
+            hasMenu: true,
+            menu: colleges.map((college) => ({
+                title: college.collegeName,
+                path: college.path,
+                icon: ChevronDown,
+            })),
+        },
+        {
+            title: 'الاخبار',
+            hasMenu: true,
+            menu: [
+                { title: 'اخبار الجامعة', path: '/university_news', icon: ChevronDown },
+                { title: 'اخبار الطلبة', path: '/student_news', icon: ChevronDown },
+            ],
+        },
+        {
+            title: 'النشاطات',
+            hasMenu: true,
+            menu: [
+                { title: 'نشاطات الجامعة', path: '/university_activities', icon: ChevronDown },
+                { title: 'نشاطات الطلبة', path: '/student_activities', icon: ChevronDown },
+            ],
+        },
+        {
+            title: "تشكيلات الجامعة", hasMenu: true, menu: [
+                { title: "قسم الشؤون الادارية والمالية", path: '/aaf_affairs', icon: ChevronDown },
+                { title: "قسم ضمان الجودة", icon: ChevronDown },
+                { title: "قسم الاعلام ولاتصال الحكومي", icon: ChevronDown },
+                { title: "قسم شؤون المرأة", icon: ChevronDown },
+                { title: "قسم شؤون الديوان", icon: ChevronDown },
+                { title: "اعلانات الطلبة", icon: ChevronDown },
+                { title: "طلب منحة دراسية", icon: ChevronDown },
+                { title: "طلب وظيفة", icon: ChevronDown },
+            ],
+        },
+        {
+            title: "حول", hasMenu: true, menu: [
+                { title: "حول الجامعة", icon: ChevronDown, path: '/about_university' },
+                { title: "حول فريق العمل", icon: ChevronDown, path: '/about_development_team' },
+            ],
+        },
+        { title: "الاتصال", hasMenu: false, path: '/contact' }
+    ];
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!isMobileMenuOpen);
@@ -47,12 +97,12 @@ const Navbar = () => {
                                 </div>
                             </Link>
                             {e.hasMenu && dropdownOpen === e.title && (
-                                <div className={`absolute grid grid-cols-2 gap-2 p-3 bg-white text-white rounded-lg shadow-lg top-full ${index > navData.length / 2 ? '' : 'right-30'}`}>
+                                <div dir='rtl' className={`absolute grid grid-cols-2 gap-2 p-3 bg-white text-white rounded-lg shadow-lg top-full ${index > navData.length / 2 ? '' : 'right-30'}`}>
                                     {e.menu.map((subMenu, index2) => (
                                         <Link to={subMenu.path} key={index2}>
                                             <div
                                                 key={index2}
-                                                className="group flex items-center justify-end gap-2 p-2 hover:bg-blue-500 rounded-md cursor-pointer transition-colors duration-300"
+                                                className="group flex flex-row-reverse items-center justify-end gap-2 p-2 hover:bg-blue-500 rounded-md cursor-pointer transition-colors duration-300"
                                             >
                                                 <h1 className="text-sm text-[#202020] group-hover:text-white">
                                                     {subMenu.title}

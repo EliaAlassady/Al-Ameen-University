@@ -1,12 +1,15 @@
-import Colleges from "../components/colleges";
+import Departments from "../components/departments";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
-export default function CollegesScreen() {
+export default function CollegesScreen({ college }) {
+    console.log(college.id);
+
+
     return (
         <>
-            <Header title={'الكليات'} />
-            <Colleges minH={'min-h-150'}/>
+            <Header title={college.collegeName} />
+            <Departments minH={'min-h-150'} collegeId={college.id} />
             <Footer />
         </>
     )

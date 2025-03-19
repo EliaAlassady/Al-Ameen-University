@@ -38,10 +38,10 @@ export default function HomeScreen() {
             </h1>
 
             <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.3, ease: "easeInOut" }}
-                className="sm:scale-90 md:scale-100"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="sm:scale-95 md:scale-100"
             >
                 <Colleges minH={'min-h-200'} />
             </motion.div>
@@ -56,7 +56,7 @@ export default function HomeScreen() {
                 transition={{ duration: 1.3, ease: "easeInOut" }}
                 className="sm:scale-90 md:scale-100"
             >
-                <Activites />
+                <Activites type={'Home'} />
             </motion.div>
 
             <h1 className='text-4xl font-semibold text-[#202020] flex justify-center font-serif pt-5'>
@@ -64,10 +64,10 @@ export default function HomeScreen() {
             </h1>
 
             <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className="sm:scale-90 md:scale-100"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="sm:scale-95 md:scale-100"
             >
                 <News />
             </motion.div>
@@ -90,10 +90,10 @@ export default function HomeScreen() {
             </h1>
 
             <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.3, ease: "easeInOut" }}
-                className="sm:scale-90 md:scale-100"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="sm:scale-95 md:scale-100"
             >
                 <Album />
             </motion.div>

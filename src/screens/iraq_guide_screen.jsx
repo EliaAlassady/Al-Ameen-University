@@ -75,7 +75,7 @@ export default function IraqGuideScreen() {
 
     return (
         <>
-            <Header />
+            <Header title={'دليل العراق'}/>
             <div className="content px-4 md:px-8 ">
                 <motion.div
                     initial={{ opacity: 0 }}

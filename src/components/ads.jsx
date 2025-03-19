@@ -12,7 +12,7 @@ export default function Ads() {
 
     return (
         <div className="p-8 min-h-200 flex justify-center items-center">
-            <div className="flex flex-wrap justify-center gap-6 w-full max-w-screen-2xl mx-auto">
+            <div className="flex flex-wrap flex-row-reverse justify-center gap-6 w-full max-w-screen-2xl mx-auto">
                 {ads.map((e, index) => (
                     <div
                         key={index}

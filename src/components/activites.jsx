@@ -1,9 +1,17 @@
 import { useState } from 'react';
-import { activites } from '../constants/activites';
 import { Link } from 'react-router-dom';
+import activityController from '../controllers/activity'
+import { Spinner } from './loading';
 
-export default function Activites() {
+export default function Activites({ type, departmentId }) {
     const [activeIndex, setActiveIndex] = useState(null);
+    const { activities, isLoading } = activityController(type, departmentId);
+
+
+
+    if (isLoading) {
+        return <div><Spinner /></div>
+    }
 
     const handleItemClick = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -11,8 +19,8 @@ export default function Activites() {
 
     return (
         <div className="p-8 min-h-200 flex justify-center items-center">
-            <div className="flex flex-wrap justify-center gap-6 w-full max-w-screen-2xl mx-auto">
-                {activites.map((e, index) => (
+            <div className="flex flex-wrap flex-row-reverse justify-center gap-6 w-full max-w-screen-2xl mx-auto">
+                {activities.map((e, index) => (
                     <div
                         key={index}
                         onClick={() => handleItemClick(index)}
@@ -44,7 +52,8 @@ export default function Activites() {
                 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 ${activeIndex === index ? '!opacity-100' : ''}`}>
                             <h1 className='text-white text-sm px-2 line-clamp-2'>{e.title}</h1>
                             <Link
-                                to={e.detailsLink}
+                                state={{ activity: e }}
+                                to={`activity/${e.id}`}
                                 onClick={(event) => event.stopPropagation()}
                                 className="inline-block text-gray-200 text-sm px-4 py-2"
                             >

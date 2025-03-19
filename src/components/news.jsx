@@ -3,16 +3,16 @@ import { news } from '../constants/news';
 export default function News() {
     return (
         <div className="p-8 min-h-200 flex justify-center items-center">
-            <div className="flex flex-wrap justify-center gap-6 w-full max-w-screen-2xl mx-auto">
+            <div className="flex flex-wrap flex-row-reverse justify-center gap-6 w-full max-w-screen-2xl mx-auto">
                 {news.map((e, index) => (
                     <div
                         key={index}
                         className="relative bg-white text-[#202020] 
-              w-[calc(100%-1.5rem)]  // هامش 24px للهواتف
-              sm:w-[calc(50%-1.5rem)] // شاشتين في الصف
-              md:w-[calc(33.333%-1.5rem)] // 3 عناصر
-              lg:w-[calc(33.333%-1.5rem)] // 3 عناصر لشاشات LG
-              xl:w-[calc(25%-1.5rem)] // 4 عناصر لشاشات XL
+              w-[calc(100%-1.5rem)] 
+              sm:w-[calc(50%-1.5rem)]
+              md:w-[calc(33.333%-1.5rem)]
+              lg:w-[calc(33.333%-1.5rem)]
+              xl:w-[calc(25%-1.5rem)]
               h-[500px] flex flex-col items-center 
               font-bold text-xl shadow-lg
               transition-all duration-300 hover:shadow-xl"

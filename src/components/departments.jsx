@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { departmentController2 } from '../controllers/department';
 import { Spinner } from './loading';
-import collegeController from '../controllers/college'
 
-export default function Colleges({ minH }) {
-    const { colleges, isLoading } = collegeController();
+export default function Departments({ minH, collegeId }) {
 
-    if (isLoading) {
+    const { collegesDepartment, isLoading2 } = departmentController2(collegeId);
+
+    if (isLoading2) {
         return <div><Spinner /></div>
     }
     return (
         <div className={`${minH} p-8 flex justify-center items-center `} >
             <div className="flex flex-wrap flex-row-reverse justify-center gap-6 w-full max-w-screen-2xl mx-auto">
-                {colleges.map((college, index) => (
+                {collegesDepartment.map((department, index) => (
                     <Link
-                        to={college.path}
+                        to={department.path}
                         key={index}
                         className="relative cursor-pointer bg-white text-[#202020]
               w-35 h-[120px]
@@ -30,11 +30,11 @@ export default function Colleges({ minH }) {
               active:-translate-y-2 active:translate-x-2"
                     >
                         <img
-                            src={college.collegeIcon}
-                            alt={college.collegeName}
-                            className="w-10 h-10 md:w-12 md:h-12 object-contain text-blue-500"
+                            src={department.departmentImage}
+                            alt={department.departmentName}
+                            className="w-10 h-10 md:w-25 md:h-25 object-contain text-blue-500"
                         />
-                        <span className='font-bold text-center text-[16px] px-10 sm:text-xl'>{college.collegeName}</span>
+                        <span className='font-bold text-center text-[16px] px-10 sm:text-xl'>{department.departmentName}</span>
                     </Link>
                 ))}
             </div>

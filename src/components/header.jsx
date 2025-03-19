@@ -7,7 +7,7 @@ export default function Header({ title }) {
     return (
         <div className="relative w-full h-60 bg-blue-500 text-white flex flex-col md:flex-row items-center justify-evenly">
             <div className="flex flex-col gap-5 items-center">
-                <h1 className="text-4xl font-bold">{title}</h1>
+                <h1 className=" text-2xl md:text-4xl text-center font-bold">{title}</h1>
                 <p>
                     <Link to="/" className="">Home</Link>
                     {pathnames.map((name, index) => {
